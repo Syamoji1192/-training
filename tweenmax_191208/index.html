@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>tweenMax</title>
+
+<style>
+
+		body{
+			background-color: gray;
+		}
+
+		.obj01{
+			color: white;
+			position: relative;
+			text-decoration: none;
+			text-align: center;
+			display: block;
+			z-index: 100;
+			padding: 10px;
+			width: 200px;
+		  border: 1px solid #fff;
+		  margin: 0 auto;
+		  margin-top: 100px;
+		}
+
+		.obj01{
+		  letter-spacing: 2px;
+		}
+
+		.start, .changed{
+		  display:none;
+		}
+
+		span{
+			display: inline-block;
+		}
+
+		#bgc01{
+			z-index: -1;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0%;
+			height: 100%;
+			background-color: white;
+		}
+
+</style>
+
+</head>
+<body>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+<div class="obj01">
+  <span class="obj01t">T</span>
+  <span class="obj01t">w</span>
+  <span class="obj01t">e</span>
+  <span class="obj01t">e</span>
+  <span class="obj01t">n</span>
+  <span class="obj01t">M</span>
+  <span class="obj01t">a</span>
+  <span class="obj01t">x</span>
+  <div id="bgc01"></div>
+</div>
+
+
+
+<script>
+	$('.obj01').on({
+			'mouseenter': function(){
+				TweenMax.to('#bgc01', 0.25, {width: "100%" });
+				TweenMax.to('.obj01', 0.25, {border: "1px solid gray",color: "gray"});
+				TweenMax.staggerTo('.obj01t', 0.25, {rotationX: 360}, 0.02);
+			},
+			'mouseleave': function(){
+				TweenMax.to('#bgc01', 0.25, {width: "0%" });
+				TweenMax.to('.obj01', 0.25, {border: "1px solid white",color: "white"});
+				TweenMax.staggerTo('.obj01t', 0.25, {rotationX: -360}, 0.02);
+			}
+	});
+
+
+</script>
+
+
+
+</body>
+</html>

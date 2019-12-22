@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>tweenMax</title>
+
+<style>
+
+		body{
+			background-color: gray;
+			position: relative;
+		}
+
+#box{
+	position: relative;
+	top: 0;
+	left: -200px;
+	width:100px;
+	height: 100px;
+	background: pink;
+}
+
+</style>
+
+</head>
+<body>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+<p>TweenMax.to('操作するオブジェクト', アニメーション時間, {アニメーション内容});</p>
+
+	<div id="box"></div>
+
+
+
+<script>
+	$(function() {
+		TweenMax.to('#box', 2, { left:300,width:"200px" });
+	});
+</script>
+</body>
+</html>

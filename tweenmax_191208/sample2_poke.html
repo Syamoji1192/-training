@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>tweenMax</title>
+
+<style>
+
+body{
+	background-color: gray;
+	position: relative;
+	width: 100vw;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+#box{
+	position: absolute;
+	right: 130vw;
+	width:0;
+	height: 100vh;
+	background: pink;
+	transform: skewX(-15deg);
+}
+header{
+	position: relative;
+}
+#android{
+	position: absolute;
+	top: -150px;
+	left: 50px;
+	width: 258px;
+	height: 138px;
+	z-index: 2;
+	background: url("img/dl_android.png") no-repeat;
+}
+#ios{
+	position: absolute;
+	top: -220px;
+	width: 267px;
+	height: 198px;
+	z-index: 1;
+	background: url("img/dl_ios.png") no-repeat;
+}
+
+</style>
+
+</head>
+<body>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+<header>
+	<div id="android"></div>
+	<div id="ios"></div>
+</header>
+
+	<div id="box"></div>
+
+<script>
+
+	$(function() {
+		TweenMax.to('#box', 0.8, { right:"-10vw",width:"130vw"});
+		TweenMax.to('#android', 0.8, { top:"0px",delay: 0.8});
+		TweenMax.to('#ios', 0.8, { top:"0px",delay:1});	
+	});
+
+
+</script>
+</body>
+</html>
